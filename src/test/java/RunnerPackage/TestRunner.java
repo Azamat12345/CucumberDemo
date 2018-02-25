@@ -21,5 +21,6 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 		WebDriverManager.chromedriver().setup();
 		//Use WebDriver manager to specify which webDriver to use
 			driver = new ChromeDriver();
+			System.out.println("Set up screen Running!!!!");
 	}
 }
