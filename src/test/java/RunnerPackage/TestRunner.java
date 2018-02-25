@@ -23,4 +23,9 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 			driver = new ChromeDriver();
 			System.out.println("Test running");
 	}
+	
+	@AfterTest
+		public void tearDown(){
+			driver.quit();
+	}
 }
