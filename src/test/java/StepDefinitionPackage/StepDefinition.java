@@ -27,8 +27,15 @@ public class StepDefinition extends TestRunner{
 		search_box.sendKeys(Keys.ENTER);
 	}
 
-	@Then("^I should be able to see the title contains the keyword$")
+	@Then("^I should be able to see the title contains \"([^\"]*)\"$")
 		public void i_should_be_able_to_see_the_title_contains_the_keyword(){
-		Assert.assertTrue(driver.getTitle().contains("Porshe"));
+		Assert.assertTrue(driver.getTitle().contains(keyword));
+	}
+	
+	@When("^I shoudl see the title contains the \"([^\"]*)\"$")
+	public void i_shoudl_see_the_title_contains_the(String keyword) {
+		search_box = driver.findElement(By.name("q"));
+		search_box.sendKeys(keyword);
+		//Assert.assertTrue(driver.getTitle().contains(keyword));
 	}
 }
